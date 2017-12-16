@@ -1,4 +1,5 @@
 language: node_js
+sudo: required
 
 services:
   - docker
@@ -9,8 +10,10 @@ node_js:
 before_install:
   - npm install -g envhandlebars
   - chmod +x ./tools/makepbo
+  - sudo apt-get install liblzo2-2 libvorbis0a libvorbisfile3 libvorbisenc2 libogg0
   
 script:
+  - export LD_LIBRARY_PATH="$(pwd)/lib"
   - bash ./build/build.sh
 
 branches:
