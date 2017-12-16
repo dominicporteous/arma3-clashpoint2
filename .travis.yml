@@ -12,7 +12,6 @@ before_install:
   - sudo apt-get install liblzo2-2 libvorbis0a libvorbisfile3 libvorbisenc2 libogg0 tree
   
 script:
-  - 
   - tree
   - chmod +x ./tools/bin/makepbo
   - export LD_LIBRARY_PATH="$TRAVIS_BUILD_DIR/tools/lib"
