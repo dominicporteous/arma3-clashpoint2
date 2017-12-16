@@ -28,6 +28,4 @@ while read m; do
   
 done < ./build/maplist.txt
 
-tree -d
-
 [[ "$DEBUG" != "" ]] && tree -a || exit 0
