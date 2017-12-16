@@ -23,6 +23,7 @@ before_deploy:
   - git tag "$(date +'%Y%m%d%H%M%S')-$TRAVIS_BRANCH"
   
 deploy:
+  all_branches: true
   provider: releases
   file_glob: true
   file: bin/*.pbo
