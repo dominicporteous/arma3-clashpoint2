@@ -25,6 +25,7 @@ before_deploy:
 deploy:
   all_branches: true
   provider: releases
+  github_token: $GITHUB_TOKEN
   file_glob: true
   file: bin/*.pbo
   skip_cleanup: true
