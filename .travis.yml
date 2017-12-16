@@ -20,7 +20,14 @@ before_deploy:
   - git config --local user.name "Travis Build"
   - git config --local user.email "build@travisci.org"
   - git tag "$(date +'%Y%m%d%H%M%S')-$TRAVIS_BRANCH"
-
+  
+deploy:
+  all_branches: true
+  provider: releases
+  github_token: $GITHUB_TOKEN
+  file_glob: true
+  file: bin/*.pbo
+  skip_cleanup: true
 
 branches:
   only:

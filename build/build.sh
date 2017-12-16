@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 MISSION_NAME="Clashpoint"
 MISSION_FOLDER_NAME="$MISSION_NAME"
