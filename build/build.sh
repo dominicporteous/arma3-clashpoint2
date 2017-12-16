@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 MISSION_NAME="Clashpoint"
 MISSION_FOLDER_NAME="$MISSION_NAME"
 
@@ -20,7 +22,7 @@ while read m; do
   cat "$MISSION_FOLDER/mission.sqm" | envhandlebars | tee "$MISSION_FOLDER/mission.sqm" > /dev/null
   cat "$MISSION_FOLDER/description.ext" | envhandlebars | tee "$MISSION_FOLDER/description.ext" > /dev/null
   
-  ./tools/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
+  ./tools/bin/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
   
   echo -e "Building $MAP done.";
   

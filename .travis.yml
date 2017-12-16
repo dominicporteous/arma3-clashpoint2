@@ -13,7 +13,7 @@ before_install:
   
 script:
   - tree
-  - chmod +x ./tools/makepbo
+  - chmod +x ./tools/bin/makepbo
   - export LD_LIBRARY_PATH="$(pwd)/lib"
   - bash ./build/build.sh
 
