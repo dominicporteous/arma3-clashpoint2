@@ -30,4 +30,4 @@ done < ./build/maplist.txt
 
 tree -d
 
-[[ "$DEBUG" != "" ]] && tree -a
+[[ "$DEBUG" != "" ]] && tree -a || exit 0
