@@ -1,0 +1,36 @@
+language: node_js
+sudo: required
+
+services:
+  - docker
+  
+node_js:
+  - "6.11"
+
+before_install:
+  - sudo apt-get install liblzo2-2 libvorbis0a libvorbisfile3 libvorbisenc2 libogg0 tree -y
+  
+script:
+  - chmod +x ./tools/bin/makepbo
+  - chmod +x ./tools/bin/mo
+  - export LD_LIBRARY_PATH="$TRAVIS_BUILD_DIR/tools/lib"
+  - rm -rf ./bin
+  - mkdir ./bin
+  - bash ./build/build.sh
+  
+before_deploy:
+  - git config --local user.name "Travis Build"
+  - git config --local user.email "build@travisci.org"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$TRAVIS_BRANCH"
+  
+deploy:
+  all_branches: true
+  provider: releases
+  github_token: $GITHUB_TOKEN
+  file_glob: true
+  file: bin/*.pbo
+  skip_cleanup: true
+
+branches:
+  only:
+    - /.*/
