@@ -23,8 +23,7 @@ while read m; do
   
   cp -r ./src/* "$MISSION_FOLDER"
   
-  cat "$MISSION_FOLDER/mission.sqm"
-  cat "$MISSION_FOLDER/mission.sqm" | envhandlebars | tee "$MISSION_FOLDER/mission.sqm"
+  cat "$MISSION_FOLDER/mission.sqm" | envhandlebars | tee "$MISSION_FOLDER/mission.sqm" > /dev/null
   cat "$MISSION_FOLDER/description.ext" | envhandlebars | tee "$MISSION_FOLDER/description.ext" > /dev/null
   
   ./tools/bin/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
