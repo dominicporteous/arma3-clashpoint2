@@ -8,6 +8,8 @@ mkdir -p "bin"
 MISSION_NAME="Clashpoint"
 MISSION_FOLDER_NAME="$MISSION_NAME"
 
+. ./tools/bin/mo
+
 while read m; do
 
   [[ -z "${m// }" ]] && continue;
@@ -16,13 +18,12 @@ while read m; do
   export MISSION_FOLDER="./build/$MISSION_FOLDER_NAME.$MAP"
 
   echo -e "Building $MAP..." && echo -en "travis_fold:start:build.map.$MAP\\r"
-  
+
   mkdir -p "$MISSION_FOLDER"
-  
   cp -r ./src/* "$MISSION_FOLDER"
   
-  #cat "$MISSION_FOLDER/mission.sqm" | envhandlebars | tee "$MISSION_FOLDER/mission.sqm" > /dev/null
-  #cat "$MISSION_FOLDER/description.ext" | envhandlebars | tee "$MISSION_FOLDER/description.ext" > /dev/null
+  cat "$MISSION_FOLDER/mission.sqm" | mo > "$MISSION_FOLDER/mission.sqm"
+  cat "$MISSION_FOLDER/description.sqm" | mo > "$MISSION_FOLDER/description.sqm"
   
   ./tools/bin/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
   
