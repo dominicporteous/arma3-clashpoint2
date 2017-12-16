@@ -14,9 +14,8 @@ while read m; do
 
   [[ -z "${m// }" ]] && continue;
   
-  MAP=$( echo "$m" | tr -cd 'A-Za-z0-9._-' )
-  
-  MISSION_FOLDER="./build/$MISSION_FOLDER_NAME.$MAP"
+  export MAP=$( echo "$m" | tr -cd 'A-Za-z0-9._-' )
+  export MISSION_FOLDER="./build/$MISSION_FOLDER_NAME.$MAP"
 
   echo -e "Building $MAP..." && echo -en "travis_fold:start:build.map.$MAP\\r"
   
