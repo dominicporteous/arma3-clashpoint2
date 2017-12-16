@@ -21,7 +21,7 @@ while read m; do
   cp -r ./src/* "$MISSION_FOLDER"
   
   cat "$MISSION_FOLDER/mission.sqm" | ./tools/bin/mo > "$MISSION_FOLDER/mission.sqm"
-  cat "$MISSION_FOLDER/description.sqm" | ./tools/bin/mo > "$MISSION_FOLDER/description.sqm"
+  cat "$MISSION_FOLDER/description.ext" | ./tools/bin/mo > "$MISSION_FOLDER/description.ext"
   
   ./tools/bin/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
   
