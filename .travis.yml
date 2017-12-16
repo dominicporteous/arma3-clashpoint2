@@ -12,6 +12,7 @@ before_install:
   
 script:
   - chmod +x ./tools/bin/makepbo
+  - chmod +x ./tools/bin/mo
   - export LD_LIBRARY_PATH="$TRAVIS_BUILD_DIR/tools/lib"
   - rm -rf ./bin
   - mkdir ./bin

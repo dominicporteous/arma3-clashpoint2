@@ -8,8 +8,6 @@ mkdir -p "bin"
 MISSION_NAME="Clashpoint"
 MISSION_FOLDER_NAME="$MISSION_NAME"
 
-. ./tools/bin/mo
-
 while read m; do
 
   [[ -z "${m// }" ]] && continue;
@@ -22,8 +20,8 @@ while read m; do
   mkdir -p "$MISSION_FOLDER"
   cp -r ./src/* "$MISSION_FOLDER"
   
-  cat "$MISSION_FOLDER/mission.sqm" | mo > "$MISSION_FOLDER/mission.sqm"
-  cat "$MISSION_FOLDER/description.sqm" | mo > "$MISSION_FOLDER/description.sqm"
+  cat "$MISSION_FOLDER/mission.sqm" | ./tools/bin/mo > "$MISSION_FOLDER/mission.sqm"
+  cat "$MISSION_FOLDER/description.sqm" | ./tools/bin/mo > "$MISSION_FOLDER/description.sqm"
   
   ./tools/bin/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
   
