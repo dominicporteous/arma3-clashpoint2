@@ -27,8 +27,6 @@ deploy:
   file_glob: true
   file: bin/*.pbo
   skip_cleanup: true
-  on:
-    tags: true
 
 branches:
   only:
