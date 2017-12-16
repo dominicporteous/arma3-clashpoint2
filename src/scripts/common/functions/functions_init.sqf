@@ -1,0 +1,10 @@
+ReplaceString = compileFinal preprocessFileLineNumbers "scripts\common\functions\replaceString.sqf";
+RequireMod = compileFinal preprocessFileLineNumbers "scripts\common\functions\requireMod.sqf";
+RestrictArsenal = compileFinal preprocessFileLineNumbers "scripts\common\functions\restrictArsenal.sqf";
+GetBasePos = compileFinal preprocessFileLineNumbers "scripts\common\functions\getBasePos.sqf";
+DistanceFromBase = compileFinal preprocessFileLineNumbers "scripts\common\functions\distanceFromBase.sqf";
+F_getLoadout = compileFinal preprocessFileLineNumbers "scripts\common\functions\F_getLoadout.sqf";
+F_setLoadout = compileFinal preprocessFileLineNumbers "scripts\common\functions\F_setLoadout.sqf";
+F_getUnitPositionId = compileFinal preprocessFileLineNumbers "scripts\common\functions\F_getUnitPositionId.sqf";
+F_getUnitPositionId = compileFinal preprocessFileLineNumbers "scripts\common\functions\F_getUnitPositionId.sqf";
+hasLOS = compileFinal preprocessFileLineNumbers "scripts\common\functions\hasLOS.sqf";

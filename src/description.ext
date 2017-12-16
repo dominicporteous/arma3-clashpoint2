@@ -1,0 +1,46 @@
+class Header
+{
+	gameType = SC;
+	minPlayers = 1;
+	maxPlayers = 30;
+};
+
+author="Dom";
+OnLoadName = "Clashpoint - {{ MAP_NAME }}";
+OnLoadMission = "Fight for control over dynamic clashpoints. Based on an original mission by Zbug.";
+
+overviewPicture="res\clashpoint.jpg";
+loadScreen="res\clashpoint.jpg";
+
+ReviveMode = 0;                        
+ReviveUnconsciousStateMode = 0;         
+ReviveRequiredTrait = 0;               
+ReviveRequiredItems = 0;                
+ReviveRequiredItemsFakConsumed = 0;     
+ReviveDelay = 6;                        
+ReviveMedicSpeedMultiplier = 2;         
+ReviveForceRespawnDelay = 3;            
+ReviveBleedOutDelay = 120;             
+
+respawn = 3;
+respawnDelay = 5;
+respawnDialog = 0;
+respawnOnStart = 0;
+aikills = 0;
+
+disabledAI=1;
+
+enableDebugConsole = 1;
+
+#include "scripts\params.hpp"
+#include "compositions\compositions.cfg"
+#include "=BTC=_q_revive\dlg.h"
+
+#include "scripts\common\bon_recruit_units\dialog\common.hpp"
+#include "scripts\common\bon_recruit_units\dialog\recruitment.hpp"
+
+class CfgFunctions
+{
+	#include "scripts\server\LARs\LARs_spawnComp.cpp"
+	
+};
