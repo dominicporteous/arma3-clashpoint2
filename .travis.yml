@@ -16,6 +16,19 @@ script:
   - chmod +x ./tools/bin/makepbo
   - export LD_LIBRARY_PATH="$TRAVIS_BUILD_DIR/tools/lib"
   - bash ./build/build.sh
+  
+before_deploy:
+  - git config --local user.name "Travis Build"
+  - git config --local user.email "build@travisci.org"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$TRAVIS_BRANCH"
+  
+deploy:
+  provider: releases
+  file_glob: true
+  file: bin/*.pbo
+  skip_cleanup: true
+  on:
+    tags: true
 
 branches:
   only:
