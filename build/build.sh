@@ -3,13 +3,10 @@
 set -e
 set -x
 
+mkdir -p "bin"
+
 MISSION_NAME="Clashpoint"
 MISSION_FOLDER_NAME="$MISSION_NAME"
-
-
-echo -en "travis_fold:start:start_debug\\r"
-[[ "$DEBUG" != "" ]] && tree -a || exit 0
-echo -en "travis_fold:end:start_debug\\r"
 
 while read m; do
 
@@ -24,8 +21,8 @@ while read m; do
   
   cp -r ./src/* "$MISSION_FOLDER"
   
-  cat "$MISSION_FOLDER/mission.sqm" | envhandlebars | tee "$MISSION_FOLDER/mission.sqm" > /dev/null
-  cat "$MISSION_FOLDER/description.ext" | envhandlebars | tee "$MISSION_FOLDER/description.ext" > /dev/null
+  #cat "$MISSION_FOLDER/mission.sqm" | envhandlebars | tee "$MISSION_FOLDER/mission.sqm" > /dev/null
+  #cat "$MISSION_FOLDER/description.ext" | envhandlebars | tee "$MISSION_FOLDER/description.ext" > /dev/null
   
   ./tools/bin/makepbo "$MISSION_FOLDER" "./bin/$MISSION_NAME.$MAP.pbo"
   
