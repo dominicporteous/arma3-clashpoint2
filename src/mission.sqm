@@ -212,7 +212,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Clashpoint 2.0 - {{ MAP_NAME }}";
+		briefingName="Clashpoint 2.0 - {{ MAP }}";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;

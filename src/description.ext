@@ -6,7 +6,7 @@ class Header
 };
 
 author="Dom";
-OnLoadName = "Clashpoint - {{ MAP_NAME }}";
+OnLoadName = "Clashpoint - {{ MAP }}";
 OnLoadMission = "Fight for control over dynamic clashpoints. Based on an original mission by Zbug.";
 
 overviewPicture="res\clashpoint.jpg";
